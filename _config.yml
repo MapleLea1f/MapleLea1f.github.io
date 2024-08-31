@@ -101,4 +101,6 @@ theme: fluid
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repository: https://github.com/MapleLea1f/MapleLea1f.github.io.git
+  branch: main
