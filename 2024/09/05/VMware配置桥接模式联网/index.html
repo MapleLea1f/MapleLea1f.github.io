@@ -19,24 +19,25 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="VMware配置桥接模式联网参考教程VMware三种网络模式详解 - 大数据老司机 - 博客园 (cnblogs.com) [Linux基础篇：VMware centos7虚拟机网络配置——桥接模式_虚拟机centos 桥接模式-CSDN博客](https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_39241682&#x2F;article&#x2F;details&#x2F;137185104#:~:text&#x3D;Linux基础篇：">
+    <meta name="description" content="VMware配置桥接模式联网参考教程VMware三种网络模式详解 - 大数据老司机 - 博客园 (cnblogs.com) Linux基础篇：VMware centos7虚拟机网络配置——桥接模式_虚拟机centos 桥接模式-CSDN博客  VMware1——hostonly网络适配器 VMware8——NAT网络适配器 VMware0——桥接模式  桥接模式是什么？什么是桥接模式？桥接模式就是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VMware配置桥接模式联网">
 <meta property="og:url" content="https://maplelea1f.github.io/2024/09/05/VMware%E9%85%8D%E7%BD%AE%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E8%81%94%E7%BD%91/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="VMware配置桥接模式联网参考教程VMware三种网络模式详解 - 大数据老司机 - 博客园 (cnblogs.com) [Linux基础篇：VMware centos7虚拟机网络配置——桥接模式_虚拟机centos 桥接模式-CSDN博客](https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_39241682&#x2F;article&#x2F;details&#x2F;137185104#:~:text&#x3D;Linux基础篇：">
+<meta property="og:description" content="VMware配置桥接模式联网参考教程VMware三种网络模式详解 - 大数据老司机 - 博客园 (cnblogs.com) Linux基础篇：VMware centos7虚拟机网络配置——桥接模式_虚拟机centos 桥接模式-CSDN博客  VMware1——hostonly网络适配器 VMware8——NAT网络适配器 VMware0——桥接模式  桥接模式是什么？什么是桥接模式？桥接模式就是">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://maplelea1f.github.io/img/VMware.png">
+<meta property="og:image" content="https://maplelea1f.github.io/img/bridge.png">
+<meta property="og:image" content="https://maplelea1f.github.io/img/VMware-1.png">
 <meta property="og:image" content="https://maplelea1f.github.io/img/VMware-2.png">
 <meta property="og:image" content="https://maplelea1f.github.io/img/VMware-3.png">
 <meta property="og:image" content="https://maplelea1f.github.io/img/VMware-4.png">
 <meta property="article:published_time" content="2024-09-05T11:10:53.000Z">
-<meta property="article:modified_time" content="2024-09-05T12:03:08.857Z">
+<meta property="article:modified_time" content="2024-09-05T12:09:42.738Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="CentOS7">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://maplelea1f.github.io/img/VMware.png">
+<meta name="twitter:image" content="https://maplelea1f.github.io/img/bridge.png">
   
   
   
@@ -229,7 +230,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          566 字
+          430 字
         
       </span>
     
@@ -240,7 +241,7 @@
         
         
         
-          5 分钟
+          4 分钟
         
       </span>
     
@@ -283,15 +284,15 @@
               <div class="markdown-body">
                 
                 <h1 id="VMware配置桥接模式联网"><a href="#VMware配置桥接模式联网" class="headerlink" title="VMware配置桥接模式联网"></a>VMware配置桥接模式联网</h1><h2 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/liugp/p/16410259.html#%E4%BA%8Cbridged%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F">VMware三种网络模式详解 - 大数据老司机 - 博客园 (cnblogs.com)</a></p>
-<p>[Linux基础篇：VMware centos7虚拟机网络配置——桥接模式_虚拟机centos 桥接模式-CSDN博客](<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39241682/article/details/137185104#:~:text=Linux%E5%9F%BA%E7%A1%80%E7%AF%87%EF%BC%9AVMware">https://blog.csdn.net/qq_39241682/article/details/137185104#:~:text=Linux基础篇：VMware</a> centos7虚拟机网络配置——桥接模式 1 1 搞清楚什么是 桥接模式 桥接模式允许虚拟机直接连接到物理网络，就像它是物理网络中的一个独立设备一样。 在这种模式下，虚拟机将具有与宿主机相同网络中的其他设备相同的网络访问权限。,5 5 打开虚拟机，开始配置网络 5.1 vi编辑网络配置文件 Vi %2Fetc%2Fsysconfig%2Fnetwork-scripts%2Fifcfg-ens33 )</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39241682/article/details/137185104#:~:text=Linux%E5%9F%BA%E7%A1%80%E7%AF%87%EF%BC%9AVMware">Linux基础篇：VMware centos7虚拟机网络配置——桥接模式_虚拟机centos 桥接模式-CSDN博客</a></p>
 <ul>
 <li>VMware1——hostonly网络适配器</li>
 <li>VMware8——NAT网络适配器</li>
 <li>VMware0——桥接模式</li>
 </ul>
-<h2 id="桥接模式是什么？"><a href="#桥接模式是什么？" class="headerlink" title="桥接模式是什么？"></a>桥接模式是什么？</h2><p><code>什么是桥接模式？桥接模式就是将主机网卡与虚拟机虚拟的网卡利用虚拟网桥进行通信。在桥接的作用下，类似于把物理主机虚拟为一个交换机，所有桥接设置的虚拟机连接到这个交换机的一个接口上，物理主机也同样插在这个交换机当中，所以所有桥接下的网卡与网卡都是交换模式的，相互可以访问而不干扰。在桥接模式下，虚拟机ip地址需要与主机在同一个网段，如果需要联网，则网关与DNS需要与主机网卡一致。其网络结构如下图所示：</code></p>
+<h2 id="桥接模式是什么？"><a href="#桥接模式是什么？" class="headerlink" title="桥接模式是什么？"></a>桥接模式是什么？</h2><p><code>什么是桥接模式？桥接模式就是将主机网卡与虚拟机虚拟的网卡利用虚拟网桥进行通信。在桥接的作用下，类似于把物理主机虚拟为一个交换机，所有桥接设置的虚拟机连接到这个交换机的一个接口上，物理主机也同样插在这个交换机当中，所以所有桥接下的网卡与网卡都是交换模式的，相互可以访问而不干扰。在桥接模式下，虚拟机ip地址需要与主机在同一个网段，如果需要联网，则网关与DNS需要与主机网卡一致。其网络结构如下图所示：</code><br><img src="/img/bridge.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="1-配置桥接模式的具体网卡"><a href="#1-配置桥接模式的具体网卡" class="headerlink" title="1.配置桥接模式的具体网卡"></a>1.配置桥接模式的具体网卡</h3><p><u>VMware Workstation-&gt;编辑-&gt;虚拟网络编辑器</u></p>
-<p><img src="/img/VMware.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/VMware-1.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="2-修改虚拟机网卡设置"><a href="#2-修改虚拟机网卡设置" class="headerlink" title="2. 修改虚拟机网卡设置"></a>2. 修改虚拟机网卡设置</h3><p><u>设置-&gt;网络适配器</u></p>
 <p><img src="/img/VMware-2.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="3-修改网络配置文件"><a href="#3-修改网络配置文件" class="headerlink" title="3.修改网络配置文件"></a>3.修改网络配置文件</h3><h4 id="3-1-查看物理主机IP信息"><a href="#3-1-查看物理主机IP信息" class="headerlink" title="3.1 查看物理主机IP信息"></a>3.1 查看物理主机IP信息</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">ipconfig /all <span class="hljs-comment">#查看主机IP信息</span><br>arp -a <span class="hljs-comment">#选择主机空闲IP</span><br></code></pre></td></tr></table></figure>
