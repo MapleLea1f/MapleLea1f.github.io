@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>2024-IDEA白嫖指南</title>
+    <link href="/2024/09/09/2024-IDEA%E7%99%BD%E5%AB%96%E6%8C%87%E5%8D%97/"/>
+    <url>/2024/09/09/2024-IDEA%E7%99%BD%E5%AB%96%E6%8C%87%E5%8D%97/</url>
+    
+    <content type="html"><![CDATA[<h1 id="2024-IDEA白嫖指南"><a href="#2024-IDEA白嫖指南" class="headerlink" title="2024-IDEA白嫖指南"></a>2024-IDEA白嫖指南</h1><ul><li>注：有效期仅至 <strong>2025.8.1</strong></li></ul><h2 id="Jetbrains官网下载2022-2-x版本的IDEA"><a href="#Jetbrains官网下载2022-2-x版本的IDEA" class="headerlink" title="Jetbrains官网下载2022.2.x版本的IDEA"></a>Jetbrains官网下载2022.2.x版本的IDEA</h2><p>下载链接：<a href="https://download.jetbrains.com/idea/ideaIU-2022.2.5.exe?_gl=1">https://download.jetbrains.com/idea/ideaIU-2022.2.5.exe?_gl=1</a></p><h2 id="准备激活工具"><a href="#准备激活工具" class="headerlink" title="准备激活工具"></a>准备激活工具</h2><p>链接：<a href="https://pan.baidu.com/s/1ucK7_vCVYLwT3qdVVsRqKQ">https://pan.baidu.com/s/1ucK7_vCVYLwT3qdVVsRqKQ</a><br>提取码：1111</p><h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><p><img src="/img/procedure.png"></p><h2 id="激活过程"><a href="#激活过程" class="headerlink" title="激活过程"></a>激活过程</h2><p>在IDEA本体关闭的情况下，到其安装路径的bin目录<br><img src="/img/procedure2.png"></p><ol><li>在激活软件中先在软件左下角选择IntelliJ IDEA 2022.2.x</li><li>browse中选择先前bin目录下的IDEA64.exe</li><li>激活软件中点击activate并点击copy code</li><li>在IntelliJ IDEA中粘贴刚刚复制的激活码</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>VMware配置桥接模式联网</title>
     <link href="/2024/09/05/VMware%E9%85%8D%E7%BD%AE%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E8%81%94%E7%BD%91/"/>
     <url>/2024/09/05/VMware%E9%85%8D%E7%BD%AE%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E8%81%94%E7%BD%91/</url>
