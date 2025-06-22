@@ -1,0 +1,640 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/qiqi_128x128.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Maple">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="re模块re(regular expression),正则表达式 12345678910111213141516171819202122232425262728293031323334353637383940import re#返回包含所有匹配结果的一个列表result&#x3D;re.findall(r&quot;\d+&quot;，&quot;我今年18岁，我有200000000块&quot;)prin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爬虫数据处理">
+<meta property="og:url" content="https://maplelea1f.github.io/2024/09/02/%E7%88%AC%E8%99%AB%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:description" content="re模块re(regular expression),正则表达式 12345678910111213141516171819202122232425262728293031323334353637383940import re#返回包含所有匹配结果的一个列表result&#x3D;re.findall(r&quot;\d+&quot;，&quot;我今年18岁，我有200000000块&quot;)prin">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-09-02T08:39:35.000Z">
+<meta property="article:modified_time" content="2025-06-22T07:40:05.457Z">
+<meta property="article:author" content="Maple">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="爬虫">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>爬虫数据处理 - Maple&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"maplelea1f.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Maple&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="爬虫数据处理"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-09-02 16:39" pubdate>
+          2024年9月2日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          10 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">爬虫数据处理</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="re模块"><a href="#re模块" class="headerlink" title="re模块"></a>re模块</h1><p><strong>re(regular expression),正则表达式</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> re<br><br><span class="hljs-comment">#返回包含所有匹配结果的一个列表</span><br>result=re.findall(<span class="hljs-string">r&quot;\d+&quot;</span>，<span class="hljs-string">&quot;我今年18岁，我有200000000块&quot;</span>)<br><span class="hljs-built_in">print</span>(result)<br><br><span class="hljs-comment">#爬虫常用</span><br>result=re.finditer(<span class="hljs-string">r&quot;\d+&quot;</span>，<span class="hljs-string">&quot;我今年18岁，我有200000000块&quot;</span>)<br><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> result:<span class="hljs-comment">#从选代器中拿到内容</span><br>    <span class="hljs-built_in">print</span>(item.group())<span class="hljs-comment">#从匹配到的结果中拿到数据</span><br><br><span class="hljs-comment">#search只会匹配到第一次匹配的内容</span><br>result=re.search(<span class="hljs-string">r&quot;\d+&quot;</span>，<span class="hljs-string">&quot;我叫周杰伦，今年32岁，我的班级是5年4班&quot;</span>)<br><span class="hljs-built_in">print</span>(result)<br><br><span class="hljs-comment">#match在匹配，从字符串的开头匹配，即在正则前加上^</span><br>result=re.search(<span class="hljs-string">r&quot;\d+&quot;</span>，<span class="hljs-string">&quot;我叫周杰伦，今年32岁，我的班级是5年4班&quot;</span>)<br><span class="hljs-built_in">print</span>(result)<br><br><span class="hljs-comment">#预加载，提前把正则对象加载完毕</span><br>obj=re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&quot;\d+&quot;</span>)<br><span class="hljs-comment">#直接使用加载好的正则表达式</span><br>result=obj.findall(<span class="hljs-string">&quot;我叫周杰伦，今年32岁，我的班级是5年4班&quot;</span>)<br><span class="hljs-built_in">print</span>(result)<br><br><span class="hljs-comment">#目标是提取10010、10086和中国联通、中国移动</span><br>s=<span class="hljs-string">&#x27;&#x27;&#x27;</span><br><span class="hljs-string">&lt;div class=&#x27;西游记&#x27;&gt;span id=&#x27;10010&#x27;&gt;中国联通&lt;/span&gt;&lt;/div&gt;</span><br><span class="hljs-string">&lt;div class=&#x27;西游记&#x27;&gt;&lt;span id=&#x27;10086&#x27;&gt;中国移动&lt;/span&gt;&lt;/div&gt;</span><br><span class="hljs-string">&#x27;&#x27;&#x27;</span><br>obj=re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&quot;&lt;span id=&#x27;(?P&lt;id&gt;\d+)&#x27;&gt;(?P&lt;name&gt;.*?)&lt;/span&gt;&quot;</span>)<br><span class="hljs-comment">#()用来提取正则表达式搜索后需要的内容</span><br><span class="hljs-comment">#?P&lt;xxx&gt;负责将提取后的数据分类进标签内的组别中</span><br>result = obj.finditer(s)<br><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> result:<br>    <span class="hljs-built_in">id</span> = item.group(<span class="hljs-string">&quot;id&quot;</span>)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>)<br><br><span class="hljs-comment">#re.S可以让正则中的.匹配换行符</span><br>obj =re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;&lt;div class=&quot;item&quot;&gt;.*?&lt;span class=&quot;title&quot;&gt;(?P&lt;name&gt;.*?)&lt;/span&gt;&#x27;</span>,re.S)<br></code></pre></td></tr></table></figure>
+
+<h1 id="bs4模块"><a href="#bs4模块" class="headerlink" title="bs4模块"></a>bs4模块</h1><p><strong>BeautifulSoup,对标签和属性单步查找</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs python">pip install bs4<br><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br><br><span class="hljs-comment">#1.初始化BeautifulSoup对象</span><br>page=BeautifulSoup(html,<span class="hljs-string">&quot;html.parser&quot;</span>)<br><br><span class="hljs-comment">#查找某个元素，只会找到一个结果</span><br>page.find(<span class="hljs-string">&quot;标签名&quot;</span>,attrs=&#123;<span class="hljs-string">&quot;属性&quot;</span>:<span class="hljs-string">&quot;值&quot;</span>&#125;)<br><br><span class="hljs-comment">#获取对应属性的标签</span><br>li= page.find(<span class="hljs-string">&quot;li&quot;</span>,attrs=&#123;<span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-string">&quot;abc&quot;</span>&#125;)<br>a=li.find(<span class="hljs-string">&#x27;a&#x27;</span>)<br><span class="hljs-built_in">print</span>(a.text) <span class="hljs-comment">#获取标签中的文本</span><br><span class="hljs-built_in">print</span>(a.get(<span class="hljs-string">&#x27;href&#x27;</span>)) <span class="hljs-comment">#获取标签中的对应属性</span><br><br><span class="hljs-comment">#查询所有结果</span><br>page.find_all(<span class="hljs-string">&quot;标签名&quot;</span>,attrs=&#123;<span class="hljs-string">&quot;属性&quot;</span>：<span class="hljs-string">&quot;值&quot;</span>&#125;)<br><br>li_list=page.find_all(<span class="hljs-string">&#x27;li&#x27;</span>)<br><span class="hljs-keyword">for</span> li <span class="hljs-keyword">in</span> li_list:<br>    a=li.find(<span class="hljs-string">&#x27;a&#x27;</span>)<br><br><span class="hljs-comment">#通过img_src下载图片</span><br>img_src=div.find(<span class="hljs-string">&#x27;img&#x27;</span>).get(<span class="hljs-string">&#x27;src&#x27;</span>)<br>img=requests.get(img_src)<br><span class="hljs-comment">#通过二进制写入将图片数据存入文件</span><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">f&quot;<span class="hljs-subst">&#123;img_name&#125;</span>.jpg&quot;</span>,mode=<span class="hljs-string">&#x27;wb&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>    f.write(img.content)<br></code></pre></td></tr></table></figure>
+
+<h1 id="XPath解析"><a href="#XPath解析" class="headerlink" title="XPath解析"></a>XPath解析</h1><p>XPath是一门在XML文档中查找信息的语言。XPath可用来在XML文档中对元素和属性进行遍历。而我们熟知的HTML恰巧属于XML的一个子集。所以完全可以用xpath去查找html中的内容。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python">pip install lxml<br><br><span class="hljs-keyword">from</span> lxml <span class="hljs-keyword">import</span> etree<br><br><span class="hljs-comment">#如果报错，可以考虑这种导入方式</span><br><span class="hljs-keyword">from</span> lxml <span class="hljs-keyword">import</span> html<br>etree=html.etree<br><br><span class="hljs-comment">#xpath解析xml</span><br>et=etree.XML(<span class="hljs-built_in">str</span>)<br>result=et.xpath(<span class="hljs-string">&#x27;/book&#x27;</span>) <span class="hljs-comment">#表示根节点</span><br>result=et.xpath(<span class="hljs-string">&#x27;/book/name&#x27;</span>) <span class="hljs-comment">#xpath中间的/类似与文件路径，表示其子分支</span><br>result=et.xpath(<span class="hljs-string">&#x27;/book/name/text()&#x27;</span>) <span class="hljs-comment">#取对应节点文本内容</span><br>result=et.xpath(<span class="hljs-string">&#x27;/book//nick&#x27;</span>) <span class="hljs-comment">#//表示所有子代与嵌套子代</span><br>result=et.xpath(<span class="hljs-string">&#x27;/book/*/nick&#x27;</span>) <span class="hljs-comment">#*表示任意book的子代，最终取book的孙代nick节点</span><br>result=et.xpath(<span class="hljs-string">&#x27;/book/author/nick[@class=&#x27;</span>jay<span class="hljs-string">&#x27;]/text()&#x27;</span>) <span class="hljs-comment">#[]表示属性筛选 @属性名=值</span><br>result=et.xpath(<span class="hljs-string">&#x27;/book/author/nick[2]/text()&#x27;</span>) <span class="hljs-comment">#[n]同时也对应同一节点下的第n项同名节点</span><br>result=et.xpath(<span class="hljs-string">&#x27;/book/partner/nick/@id&#x27;</span>) <span class="hljs-comment">#获取对应的nick中的id属性值</span><br><br><span class="hljs-comment">#xpath解析HTML</span><br>et=etree.HTML(<span class="hljs-built_in">str</span>)<br>li_list=et.xpath(<span class="hljs-string">&#x27;//li&#x27;</span>)<br><span class="hljs-keyword">for</span> li <span class="hljs-keyword">in</span> li_list:<br>    href=li.xpath(<span class="hljs-string">&#x27;./a/@href&#x27;</span>) <span class="hljs-comment">#./表示当前节点</span><br>    text=li.xpath(<span class="hljs-string">&#x27;./a/text()&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h1 id="pyquery模块"><a href="#pyquery模块" class="headerlink" title="pyquery模块"></a>pyquery模块</h1><p><strong>pyquery主要通过css选择器的方式处理数据 pyquery能改变HTML中的结构</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs python">pip install pyquery<br><span class="hljs-keyword">from</span> pyquery <span class="hljs-keyword">import</span> PyQuery<br><br><span class="hljs-comment">#加载html内容</span><br>p=PyQuery(html)<br><br>li=p(<span class="hljs-string">&#x27;li&#x27;</span>)<br><span class="hljs-comment">#获取的对象为a标签时</span><br>a=p(<span class="hljs-string">&#x27;li&#x27;</span>)(<span class="hljs-string">&#x27;a&#x27;</span>) <span class="hljs-comment">#链式选择</span><br>a=p(<span class="hljs-string">&#x27;li a&#x27;</span>) <span class="hljs-comment">#后代选择</span><br>a=p(<span class="hljs-string">&#x27;.aaa a&#x27;</span>) <span class="hljs-comment">#class=&#x27;aaa&#x27;</span><br>a=p(<span class="hljs-string">&#x27;#qq a&#x27;</span>) <span class="hljs-comment">#id=&#x27;qq&#x27;</span><br><br>href=p(<span class="hljs-string">&#x27;#qq a&#x27;</span>).attr(<span class="hljs-string">&#x27;href&#x27;</span>) <span class="hljs-comment">#获取属性</span><br>text=p(<span class="hljs-string">&#x27;#qq a&#x27;</span>).text() <span class="hljs-comment">#获取文本</span><br><br><span class="hljs-comment">#注：如果多个标签同时获取属性，只能拿到第一个</span><br>href=p(<span class="hljs-string">&#x27;li a&#x27;</span>).attr(<span class="hljs-string">&#x27;href&#x27;</span>)<br><br><span class="hljs-comment">#多个标签获取属性</span><br>it=p(<span class="hljs-string">&#x27;li a&#x27;</span>).items()<br><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> it:<br>    href=item.attr(<span class="hljs-string">&#x27;href&#x27;</span>)<br>    text=item.text() <span class="hljs-comment">#获取文字</span><br>    html=item.html() <span class="hljs-comment">#获取全部内容</span><br><br><span class="hljs-comment">#对HTML内容进行修改</span><br>p(<span class="hljs-string">&#x27;div.aaa&#x27;</span>).after(<span class="hljs-string">&#x27;&#x27;&#x27;xxx&#x27;&#x27;&#x27;</span>) <span class="hljs-comment">#在标签后方添加</span><br>p(<span class="hljs-string">&#x27;div.aaa&#x27;</span>).append(<span class="hljs-string">&#x27;&#x27;&#x27;xxx&#x27;&#x27;&#x27;</span>) <span class="hljs-comment">#在标签内容中添加</span><br>p(<span class="hljs-string">&#x27;div.bbb&#x27;</span>).attr(<span class="hljs-string">&#x27;class&#x27;</span>,<span class="hljs-string">&#x27;aaa&#x27;</span>) <span class="hljs-comment">#更改标签的属性</span><br>p(<span class="hljs-string">&#x27;div.bbb&#x27;</span>).remove_attr(<span class="hljs-string">&#x27;class&#x27;</span>)<span class="hljs-comment">#删除标签属性</span><br>p(<span class="hljs-string">&#x27;div.bbb&#x27;</span>).remove() <span class="hljs-comment">#删除该标签</span><br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/python/" class="print-no-link">#python</a>
+      
+        <a href="/tags/%E7%88%AC%E8%99%AB/" class="print-no-link">#爬虫</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>爬虫数据处理</div>
+      <div>https://maplelea1f.github.io/2024/09/02/爬虫数据处理/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Maple</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年9月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/09/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E3%80%81%E5%A4%9A%E8%BF%9B%E7%A8%8B%E3%80%81%E5%8D%8F%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="多线程、多进程、协程学习笔记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">多线程、多进程、协程学习笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/09/01/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%20-%20%E5%89%AF%E6%9C%AC/" title="正则表达式学习笔记">
+                        <span class="hidden-mobile">正则表达式学习笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

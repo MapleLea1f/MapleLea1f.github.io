@@ -1,0 +1,676 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/qiqi_128x128.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Maple">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="多线程、多进程、协程 进程（’资源单位’）：运行中的程序，每次我们执行一个程序，咱们的操作系统对自动的为这个程序准备一些必要的资源(例如，分配内存，创建一个能够执行的线程）   线程（’执行单位’）：程序内，可以直接被CPU调度的执行过程，是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位。  多线程写法一1234567891011121314from threadi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多线程、多进程、协程学习笔记">
+<meta property="og:url" content="https://maplelea1f.github.io/2024/09/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E3%80%81%E5%A4%9A%E8%BF%9B%E7%A8%8B%E3%80%81%E5%8D%8F%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:description" content="多线程、多进程、协程 进程（’资源单位’）：运行中的程序，每次我们执行一个程序，咱们的操作系统对自动的为这个程序准备一些必要的资源(例如，分配内存，创建一个能够执行的线程）   线程（’执行单位’）：程序内，可以直接被CPU调度的执行过程，是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位。  多线程写法一1234567891011121314from threadi">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-09-02T08:43:30.000Z">
+<meta property="article:modified_time" content="2025-06-22T07:40:05.457Z">
+<meta property="article:author" content="Maple">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="异步编程">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>多线程、多进程、协程学习笔记 - Maple&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"maplelea1f.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Maple&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="多线程、多进程、协程学习笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-09-02 16:43" pubdate>
+          2024年9月2日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">多线程、多进程、协程学习笔记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="多线程、多进程、协程"><a href="#多线程、多进程、协程" class="headerlink" title="多线程、多进程、协程"></a>多线程、多进程、协程</h1><ul>
+<li>进程（’资源单位’）：运行中的程序，每次我们执行一个程序，咱们的操作系统对自动的为这个程序准备一些必要的资源(例如，分配内存，创建一个能够执行的线程）</li>
+</ul>
+<ul>
+<li>线程（’执行单位’）：程序内，可以直接被CPU调度的执行过程，是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位。</li>
+</ul>
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><h3 id="写法一"><a href="#写法一" class="headerlink" title="写法一"></a>写法一</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> threading <span class="hljs-keyword">import</span> Thread<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">name</span>):<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">100</span>):<br>        <span class="hljs-built_in">print</span>(name,i)<br><br><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    t1=Thread(target=func,args=(<span class="hljs-string">&#x27;love&#x27;</span>,))<br>    t2=Thread(target=func,args=(<span class="hljs-string">&#x27;you&#x27;</span>,))<br>    t3=Thread(target=func,args=(<span class="hljs-string">&#x27;i&#x27;</span>,))<br><br>    t2.start()<br>    t1.start()<br>    t3.start()<br></code></pre></td></tr></table></figure>
+
+<h3 id="写法二"><a href="#写法二" class="headerlink" title="写法二"></a>写法二</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> threading <span class="hljs-keyword">import</span> Thread<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyThread</span>(<span class="hljs-title class_ inherited__">Thread</span>):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">_init_</span>(<span class="hljs-params">self,name</span>):<br>       <span class="hljs-built_in">super</span>(MyThread,<span class="hljs-variable language_">self</span>)._init_()<br>       <span class="hljs-variable language_">self</span>.name = namel<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">run</span>(<span class="hljs-params">self</span>):<br>       <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">100</span>):<br>           <span class="hljs-built_in">print</span>(<span class="hljs-variable language_">self</span>.name,i)<br>           <br><span class="hljs-keyword">if</span> __name__=<span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    t1=MyThread(<span class="hljs-string">&#x27;I&#x27;</span>)<br>    t2=MyThread(<span class="hljs-string">&#x27;love&#x27;</span>)<br>    t3=MyThread(<span class="hljs-string">&#x27;you&#x27;</span>)<br>    <br>	t1.start()<br>	t2.start()<br>	t3.start()<br></code></pre></td></tr></table></figure>
+
+<h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> concurrent.futures <span class="hljs-keyword">import</span> ThreadPoolExecutor<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">name,t</span>):<br>	time.sleep(t)<br>	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):<br>		<span class="hljs-built_in">print</span>(name)<br>	<span class="hljs-keyword">return</span> name<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fn</span>(<span class="hljs-params">res</span>): <br>`打印返回的结果`<br>	<span class="hljs-built_in">print</span>(res.result())<br><br><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">&#x27;__main__&#x27;</span>:<br>	<span class="hljs-keyword">with</span> ThreadPoolExecutor(<span class="hljs-number">3</span>) <span class="hljs-keyword">as</span> t:<br>        t.submit(func,<span class="hljs-string">&#x27;周杰伦&#x27;</span>,<span class="hljs-number">2</span>).add_done_callback(fn)<br>        t.submit(func,<span class="hljs-string">&#x27;薛之谦&#x27;</span>,<span class="hljs-number">1</span>).add_done_callback(fn)<br>        t.submit(func,<span class="hljs-string">&#x27;余华&#x27;</span>,<span class="hljs-number">3</span>).add_done_callback(fn)<br>        <br>    <span class="hljs-comment">#t.submit().add_done_callback()返回即执行</span><br>    <span class="hljs-comment">#返回callback执行的顺序是不确定的</span><br><br>	result=t.<span class="hljs-built_in">map</span>(func,[<span class="hljs-string">&#x27;周杰伦&#x27;</span>,<span class="hljs-string">&#x27;薛之谦&#x27;</span>,<span class="hljs-string">&#x27;余华&#x27;</span>],[<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>])<br>	<span class="hljs-keyword">for</span> r <span class="hljs-keyword">in</span> rusult:<br>		<span class="hljs-built_in">print</span>(r)<br>	<span class="hljs-comment">#map返回值是生成器，返回的内容和任务分发的顺序是一致的</span><br></code></pre></td></tr></table></figure>
+<h2 id="多进程"><a href="#多进程" class="headerlink" title="多进程"></a>多进程</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Process<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>(<span class="hljs-params">name,t</span>):<br>	time.sleep(t)<br>	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):<br>		<span class="hljs-built_in">print</span>(name)<br>	<span class="hljs-keyword">return</span> name<br>	<br><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    p1=Process(target=func,args=(<span class="hljs-string">&#x27;i&#x27;</span>,))<br>    p2=Process(target=func,args=(<span class="hljs-string">&#x27;love&#x27;</span>,))<br>    p3=Process(target=func,args=(<span class="hljs-string">&#x27;you&#x27;</span>,))<br>    <br>	p1.start()<br>	p2.start()<br>	p3.start()<br></code></pre></td></tr></table></figure>
+
+<h3 id="进程间传递数据-中间件"><a href="#进程间传递数据-中间件" class="headerlink" title="进程间传递数据(中间件)"></a>进程间传递数据(中间件)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#此处将Queue作为中间件</span><br><span class="hljs-keyword">from</span> multiprocessing <span class="hljs-keyword">import</span> Process,Queue<br><span class="hljs-keyword">from</span> concurrent.futures <span class="hljs-keyword">import</span> ThreadPoolExecutor<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_img_src</span>(<span class="hljs-params">q</span>):<br>	<span class="hljs-comment">#获取到src后通过put向队列里装数据</span><br>	q.put(src)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">download</span>(<span class="hljs-params">url</span>):<br>	<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;开始下载&#x27;</span>)<br>	<span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;./img.&#x27;</span>+name,mode=<span class="hljs-string">&#x27;wb&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>		resp=requests.get(url)<br>		f.write(resp.content)<br>	<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;下载完毕&#x27;</span>,url)<br>	<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">download_img</span>(<span class="hljs-params">q</span>):<br>	<span class="hljs-keyword">with</span> ThreadPoolExecutor(<span class="hljs-number">10</span>) <span class="hljs-keyword">as</span> t:<br>        <span class="hljs-keyword">while</span> <span class="hljs-number">1</span>:	<br>            src=q.get() <span class="hljs-comment">#从队列中获取数据，如果没数据就会阻塞</span><br>            t.submit(download,src)<br>            <span class="hljs-comment"># 此处判断是否应该结束，结束就break终止循环</span><br><br><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    q=Queue()<br>    p1=Process(target=get_img_src,args=(q,))<br>    p2=Process(target=download_img,args=(q,))<br>    p1.start()<br>    p2.start()<br>    <br></code></pre></td></tr></table></figure>
+<p>**补充：在网络编程中，队列和 socket 经常结合使用，以下是一些应用场景</p>
+<ul>
+<li><code>请求处理：服务器端可能会使用一个队列来管理来自客户端的 socket 请求。当请求到达时，它们被放入队列中，然后服务器按顺序处理这些请求。</code></li>
+<li><code>异步处理：在处理非阻塞 I/O 时，可以使用队列来管理待处理的 socket 事件。例如，一个线程可以监听 socket 连接，并将新的连接请求放入队列中，然后由其他工作线程来处理这些连接。</code></li>
+<li><code>消息队列：在网络应用程序中，可以使用消息队列（如 RabbitMQ、Kafka）来缓冲和转发 socket 消息，确保消息的可靠传递和处理。</code>**</li>
+</ul>
+<h2 id="使用场景："><a href="#使用场景：" class="headerlink" title="使用场景："></a>使用场景：</h2><ul>
+<li>多线程：任务相对统一，相互类似</li>
+<li>多进程：多个任务相互独立，很少有交集<ul>
+<li>例：免费IP池</li>
+</ul>
+<ol>
+<li>从免费网站抓取代理IP</li>
+<li>验证代理IP是否可用</li>
+<li>准备对外的接口</li>
+</ol>
+</li>
+<li>协程：能够更加高效的利用CPU</li>
+</ul>
+<h2 id="多任务异步协程"><a href="#多任务异步协程" class="headerlink" title="多任务异步协程"></a>多任务异步协程</h2><p><strong><code>协程（Coroutine）是一种程序组件，它允许多个入口点用于暂停和恢复执行的函数，可以在单个线程内实现多任务的并发执行。协程提供了一种更加轻量级的并发单元，相比于线程和进程，协程间的切换开销更小，因为它们共享同一线程的堆栈空间。</code></strong></p>
+<ul>
+<li><code>协作式多任务：协程通过显式的暂停（yield）和恢复（resume）操作来切换执行，这种切换是协作式的，而非抢占式的。</code></li>
+<li><code>轻量级：协程不像线程那样涉及操作系统的上下文切换，它们通常由程序自身控制，因此创建和切换开销较小。</code></li>
+<li><code>非阻塞I/O操作：协程常用于执行非阻塞I/O操作，可以在等待I/O时让出CPU给其他协程执行</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#执行协程对象的方法</span><br><br><span class="hljs-keyword">import</span> asyncio<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">func</span>():<br><span class="hljs-comment">#该函数执行时获得的是一个协程对象</span><br>	<span class="hljs-keyword">pass</span><br><br><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">&#x27;__main__&#x27;</span>:<br><span class="hljs-comment">#协程对象想要执行，必须借助event_loop</span><br>	func()<br>	<span class="hljs-comment">#获取事件循环</span><br>	event_loop=asyncio.get_event_loop()<br>	<span class="hljs-comment">#event_loop执行协程对象，直到该对象内的内容执行完毕为止</span><br>	event_loop.run_until_complete(func())<br>	<br>	<span class="hljs-comment">#该语句可能会报错Event Loop has closed!!!</span><br>	asyncio.run(func())<br></code></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#多任务执行协程对象</span><br><br><span class="hljs-keyword">import</span> asyncio<br><span class="hljs-keyword">import</span> time<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">func1</span>():<br>	<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;func1开始&#x27;</span>)<br>	<span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">1</span>)<br>	<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;func1结束&#x27;</span>)<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">func2</span>():<br>	<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;func2开始&#x27;</span>)<br>	<span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">2</span>)<br>	<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;func2结束&#x27;</span>)<br>	<br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">func3</span>():<br>	<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;func3开始&#x27;</span>)<br>	<span class="hljs-keyword">await</span> asyncio.sleep(<span class="hljs-number">3</span>)<br>	<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;func3结束&#x27;</span>)<br>	<br><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">&#x27;__main__&#x27;</span>:<br>	f1=func1()<br>	f2=func2()<br>	f3=func3()<br>	tasks=[<br>        f1,<br>        f2,<br>        f3,<br>	]<br>	asyncio.run(asyncio.wait(tasks))<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#返回值的获取</span><br><br><span class="hljs-keyword">import</span> asyncio<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">download</span>(<span class="hljs-params">url</span>):<br>	<span class="hljs-keyword">pass</span><br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br><span class="hljs-comment">#假设已经获取到下载链接</span><br>	urls=[<br>		<span class="hljs-string">&#x27;xxx.com&#x27;</span>,<br>		<span class="hljs-string">&#x27;xxx.com&#x27;</span>,<br>		<span class="hljs-string">&#x27;xxx.com&#x27;</span><br>	]<br><span class="hljs-comment">#封装任务列表</span><br>    tasks=[]<br>    <span class="hljs-keyword">for</span> url <span class="hljs-keyword">in</span> urls:<br>    	<span class="hljs-comment">#创建任务</span><br>        task=asyncio.create_task(download(url))<br>        <span class="hljs-comment">#将任务扔到列表，为了统一处理</span><br>        tasks.append(task)<br>	<span class="hljs-comment">#asyncio.wait()返回的结果是无序的</span><br>    done,pending=<span class="hljs-keyword">await</span> asyncio.wait(tasks)<br>	<span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> done:<br>		<span class="hljs-comment">#t是任务，result()是任务的返回值</span><br>		<span class="hljs-built_in">print</span>(t.result())<br>	<span class="hljs-comment">#asyncio.gather()返回值是有序的(按照添加任务顺序返回)</span><br>	<span class="hljs-comment">#return_exceptions=True,如果有错误信息，返回错误信息，其他任务正常执行</span><br>	result=<span class="hljs-keyword">await</span> asyncio.gather(*tasks,return_exceptions=<span class="hljs-literal">True</span>)<br>		<br><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">&#x27;__main__&#x27;</span>:<br>	<span class="hljs-comment">#方法一:</span><br>	asyncio.run(main())<br>	<br>	<span class="hljs-comment">#方法二:</span><br>	event_loop=asyncio.get_event_loop()<br>	event_loop.run_until_complete(main())<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> asyncio<br><span class="hljs-keyword">import</span> aiohttp<br><span class="hljs-keyword">import</span> aiofiles<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">download</span>(<span class="hljs-params">url</span>):<br>	<span class="hljs-comment">#相当于requests</span><br>	<span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> aiohttp.ClientSession() <span class="hljs-keyword">as</span> session: <br>		<span class="hljs-comment">#发送网络请求</span><br>		<span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> seesion.get(url) <span class="hljs-keyword">as</span> resp:<br>			text=<span class="hljs-keyword">await</span> resp.text() <span class="hljs-comment">#-&gt;resp.text</span><br>			content=<span class="hljs-keyword">await</span> resp.content.read() <span class="hljs-comment">#-&gt;resp.content</span><br>			<span class="hljs-comment">#写入文件</span><br>			<span class="hljs-keyword">async</span> <span class="hljs-keyword">with</span> aiofiles.<span class="hljs-built_in">open</span>(file_name,mode=<span class="hljs-string">&#x27;wb&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>				<span class="hljs-keyword">await</span> f.write(content)<br><span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">main</span>():<br>	<span class="hljs-comment">#同上</span><br>	<span class="hljs-keyword">pass</span><br>	<br>	<br><span class="hljs-keyword">if</span> __name__==<span class="hljs-string">&#x27;__main__&#x27;</span>:<br>	asyncio.run(main())<br></code></pre></td></tr></table></figure>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/python/" class="print-no-link">#python</a>
+      
+        <a href="/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/" class="print-no-link">#异步编程</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>多线程、多进程、协程学习笔记</div>
+      <div>https://maplelea1f.github.io/2024/09/02/多线程、多进程、协程学习笔记/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Maple</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年9月2日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/09/02/Selenium%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/" title="Selenium入门笔记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Selenium入门笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/09/02/%E7%88%AC%E8%99%AB%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" title="爬虫数据处理">
+                        <span class="hidden-mobile">爬虫数据处理</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
