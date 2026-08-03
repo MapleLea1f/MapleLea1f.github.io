@@ -1,0 +1,958 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/qiqi_128x128.jpg">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Maple">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一名上海应届 IT 运维工程师，如何不放弃 Java 与 AI Agent 积累，建立可迁移、可量化、抗 AI 替代的五年职业路径。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从 IT 运维到 AI 应用平台工程师：一份给自己的五年职业规划">
+<meta property="og:url" content="https://maplelea1f.github.io/2026/08/02/%E4%BB%8EIT%E8%BF%90%E7%BB%B4%E5%88%B0AI%E5%BA%94%E7%94%A8%E5%B9%B3%E5%8F%B0%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%9A%E4%B8%80%E4%BB%BD%E7%BB%99%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BA%94%E5%B9%B4%E8%81%8C%E4%B8%9A%E8%A7%84%E5%88%92/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:description" content="一名上海应届 IT 运维工程师，如何不放弃 Java 与 AI Agent 积累，建立可迁移、可量化、抗 AI 替代的五年职业路径。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-08-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-03T09:26:30.687Z">
+<meta property="article:author" content="Maple">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="职业规划">
+<meta property="article:tag" content="AI应用">
+<meta property="article:tag" content="云原生">
+<meta property="article:tag" content="SRE">
+<meta property="article:tag" content="上海">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>从 IT 运维到 AI 应用平台工程师：一份给自己的五年职业规划 - Maple&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"maplelea1f.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Maple&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="从 IT 运维到 AI 应用平台工程师：一份给自己的五年职业规划"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-08-03 00:00" pubdate>
+          2026年8月3日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          66 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">从 IT 运维到 AI 应用平台工程师：一份给自己的五年职业规划</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="从-IT-运维到-AI-应用平台工程师：一份给自己的五年职业规划"><a href="#从-IT-运维到-AI-应用平台工程师：一份给自己的五年职业规划" class="headerlink" title="从 IT 运维到 AI 应用平台工程师：一份给自己的五年职业规划"></a>从 IT 运维到 AI 应用平台工程师：一份给自己的五年职业规划</h1><blockquote>
+<p>这不是一份“只要努力就能高薪”的承诺，而是一份把选择、投入和证据都写清楚的行动计划。它会随着岗位、能力和市场变化，每个季度更新一次。</p>
+</blockquote>
+<h2 id="01-我的起点，以及真正要解决的问题"><a href="#01-我的起点，以及真正要解决的问题" class="headerlink" title="01. 我的起点，以及真正要解决的问题"></a>01. 我的起点，以及真正要解决的问题</h2><p>我目前在上海从事 IT 运维工作，税前月薪 14K，本科毕业于东华大学。入职前，我有两段不同但互补的开发经历：一段 Java 后端实习，一段 AI Agent 方向实习。</p>
+<p>我会 Java 后端常用技术栈：Spring Boot、Spring Cloud、MySQL、Redis；也用 Python 写过脚本和爬虫。在 AI Agent 实习中，我接触过 Milvus 向量检索、召回与重排、意图识别、多轮问答和知识库构建；在 Java 后端实习中，我做过多渠道导入重构、日志治理等工程化工作。现在的运维岗位，则给了我网络、虚拟化、监控、变更和生产环境的入口。</p>
+<p>这份组合的风险也很明显：如果我把未来几年都投入在终端、机房巡检、重复工单和人工发布上，开发积累会逐渐钝化，市场会把我归类为“基础运维”；如果我只做脱离生产环境的 Java CRUD 或追逐热点的 AI Demo，又会浪费正在获得的生产现场经验。</p>
+<p>所以，我要解决的不是“运维还是开发”的二选一，而是下面这个问题：</p>
+<blockquote>
+<p>如何把开发能力、AI 应用经验和生产环境经验，收敛为市场愿意持续付费的交叉能力？</p>
+</blockquote>
+<p>我的答案是：以 <strong>Java &#x2F; AI 应用工程能力</strong> 为主轴，以 <strong>云原生交付、可观测性与可靠性</strong> 为护城河，逐步成为能够把 AI 或业务服务真正稳定地交付到生产环境的人。</p>
+<h2 id="02-我的北极星：不是“运维转开发”，而是“能交付生产级-AI-服务的人”"><a href="#02-我的北极星：不是“运维转开发”，而是“能交付生产级-AI-服务的人”" class="headerlink" title="02. 我的北极星：不是“运维转开发”，而是“能交付生产级 AI 服务的人”"></a>02. 我的北极星：不是“运维转开发”，而是“能交付生产级 AI 服务的人”</h2><p>未来五年的主线定位是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">Java 后端 + AI Agent 经验 + 当前运维现场<br>                ↓<br>云原生交付 / 自动化 / 可观测性 / 可靠性<br>                ↓<br>AI 应用平台工程师 或 云原生 Java 后端工程师<br>                ↓<br>平台工程 / SRE / AI 基础设施与 MLOps（按机会分化）<br></code></pre></td></tr></table></figure>
+
+<p>这个方向并不是为了给自己贴一个新潮的标签，而是因为它同时满足四件事：</p>
+<ol>
+<li>它保留了我已经具备的 Java 和 AI 应用优势，而不是从零开始换赛道。</li>
+<li>它把当前运维岗位变成生产经验的来源，而不是简历中的弯路。</li>
+<li>它要求对系统、风险、成本、故障和交付结果负责，这类能力比“会生成一段代码或 YAML”更难被自动化替代。</li>
+<li>它对应的岗位横跨互联网、金融科技、外企 SaaS、企业软件和 AI 公司，选择面比单一业务开发或基础运维更广。</li>
+</ol>
+<p>我不会把“进大厂”当成唯一目标，但会把下面的组合当成优先级最高的机会：</p>
+<blockquote>
+<p>知名平台或外企品牌 + 直接雇佣或稳定核心团队 + 真实生产范围 + 可量化工程成果。</p>
+</blockquote>
+<p>品牌在职业早期确实有价值：它通常带来更规范的工程流程、更大的系统规模、更强的人才密度和更容易被下一家理解的履历信号。但品牌不能替代能力。一个只有驻场、工单、手工发布和终端支持的“大公司项目”，对下一跳的帮助可能不如一个能拥有 CI&#x2F;CD、Kubernetes、监控和服务稳定性结果的中型团队。</p>
+<h2 id="03-目标岗位：我会投什么，不会投什么"><a href="#03-目标岗位：我会投什么，不会投什么" class="headerlink" title="03. 目标岗位：我会投什么，不会投什么"></a>03. 目标岗位：我会投什么，不会投什么</h2><h3 id="第一目标岗位（12–24-个月后）"><a href="#第一目标岗位（12–24-个月后）" class="headerlink" title="第一目标岗位（12–24 个月后）"></a>第一目标岗位（12–24 个月后）</h3><table>
+<thead>
+<tr>
+<th>目标岗位</th>
+<th>我需要证明的能力</th>
+<th>与我当前背景的连接</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>云原生 Java 后端工程师</td>
+<td>Java、数据库与缓存、服务治理、容器化、性能与故障排查</td>
+<td>保留 Java 主线，用交付能力拉开与普通 CRUD 的差异</td>
+</tr>
+<tr>
+<td>AI 应用平台工程师 &#x2F; AI 应用工程师</td>
+<td>RAG 评测、检索链路、服务化、监控、权限与成本意识</td>
+<td>直接承接 AI Agent 实习积累</td>
+</tr>
+<tr>
+<td>DevOps &#x2F; 平台工程师</td>
+<td>CI&#x2F;CD、Docker、Kubernetes、IaC、监控、自动化</td>
+<td>把当前运维经验转成工程化资产</td>
+</tr>
+<tr>
+<td>SRE（初中级）</td>
+<td>Linux&#x2F;网络、可观测性、容量与变更、故障复盘、自动化</td>
+<td>适合有生产现场与开发能力的人</td>
+</tr>
+<tr>
+<td>中间件 &#x2F; 可观测性工程师</td>
+<td>Redis、MQ、日志、指标、链路追踪、容量与高可用</td>
+<td>可从 Java 项目中的组件经验继续深化</td>
+</tr>
+</tbody></table>
+<h3 id="第二目标岗位（3–5-年后）"><a href="#第二目标岗位（3–5-年后）" class="headerlink" title="第二目标岗位（3–5 年后）"></a>第二目标岗位（3–5 年后）</h3><p>当我能独立负责一条服务或平台能力后，再向下面的方向择机深入：AI 平台 SRE、MLOps、平台工程、云原生架构、金融科技基础设施或高并发 Java 服务。</p>
+<h3 id="明确避开的岗位画像"><a href="#明确避开的岗位画像" class="headerlink" title="明确避开的岗位画像"></a>明确避开的岗位画像</h3><p>我不会因为岗位名称好听就投递。下面三类工作，如果没有明确升级空间，要谨慎：</p>
+<ul>
+<li>以桌面支持、资产盘点、机房巡检、账号权限和工单闭环为绝大多数工作内容的基础运维。</li>
+<li>只负责手工部署、值班告警、重复执行 SOP，且没有脚本、平台、监控或改造权限的“DevOps”。</li>
+<li>外包驻场但无法接触核心代码、生产变更、平台设计，也没有转正或迁移机会的岗位。</li>
+</ul>
+<p>判断一份岗位值不值得去，我会至少确认它是否覆盖以下能力中的三项：Kubernetes &#x2F; Docker、CI&#x2F;CD、Prometheus &#x2F; Grafana &#x2F; 日志平台、Terraform &#x2F; Ansible、Java &#x2F; Python &#x2F; Go 编码、云服务、中间件、容量与高可用、真实故障或变更责任。</p>
+<p>市场上的 JD 已经能说明这种交集的存在。例如，上海的 <a target="_blank" rel="noopener" href="https://cn.linkedin.com/jobs/view/devops-engineer-analyst-risk-quant-analytics-at-polymer-capital-4436317317">Polymer Capital 初级 DevOps 岗</a> 同时要求 Linux、Python&#x2F;Bash、Terraform、Docker&#x2F;Kubernetes；<a target="_blank" rel="noopener" href="https://cn.linkedin.com/jobs/view/electronic-trading-devops-engineer-global-banking-markets-engineering-analyst-associate-shanghai-at-%E9%AB%98%E7%9B%9B-4377786019">高盛电子交易 DevOps 岗</a> 强调 CI&#x2F;CD、IaC、监控、Linux 调优与 Java&#x2F;Python&#x2F;Go 调试；<a target="_blank" rel="noopener" href="https://www.sse.com.cn/aboutus/recruitment/sseinfo/c/c_20260409_10814681.shtml">上海证券交易所信息网络公司招聘</a> 也覆盖 Java&#x2F;Python、Linux、容器、Ansible、Zabbix、ELK 等能力。具体职位会关闭或变化，但 JD 中反复出现的能力组合值得长期按图索骥。</p>
+<h2 id="04-薪资目标：把它当作结果，不把它当作唯一指标"><a href="#04-薪资目标：把它当作结果，不把它当作唯一指标" class="headerlink" title="04. 薪资目标：把它当作结果，不把它当作唯一指标"></a>04. 薪资目标：把它当作结果，不把它当作唯一指标</h2><p>我当前 14K&#x2F;月并不低到必须冲动离职，但如果长期停留在基础运维职责上，未来的薪资上限和岗位选择会受限。</p>
+<p>我的阶段性目标不是“下一份工作一定翻倍”，而是用可验证能力去交换更高的职责密度：</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>合理目标</th>
+<th>薪资目标（上海税前，目标而非承诺）</th>
+<th>前提</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>现在–6 个月</td>
+<td>把新人运维任务转为可证明的工程成果</td>
+<td>保持现有收入和稳定性</td>
+<td>有脚本、监控或变更成果，不只是完成培训</td>
+</tr>
+<tr>
+<td>6–12 个月</td>
+<td>形成作品集和完整技术叙事</td>
+<td>不因焦虑而低价值跳槽</td>
+<td>有一个生产级个人项目、两类真实工作成果</td>
+</tr>
+<tr>
+<td>12–24 个月</td>
+<td>跳到直接雇佣或核心团队的云原生&#x2F;AI 应用&#x2F;平台岗位</td>
+<td>18–24K × 13&#x2F;14 薪为争取区间</td>
+<td>具备面试能力、项目证据和岗位匹配度</td>
+</tr>
+<tr>
+<td>3–5 年</td>
+<td>独立承担服务或平台可靠性结果</td>
+<td>25–35K × 13&#x2F;14 薪为争取区间</td>
+<td>有系统设计、稳定性、成本或交付影响力</td>
+</tr>
+</tbody></table>
+<p>上表是我的谈判目标，不是市场平均值或保底承诺。城市、年终、直接雇佣与否、行业、英语、值班制度、岗位实际范围，都会显著影响总包。比月薪更重要的是：我是否从“执行者”变成了能对交付、稳定性和效率结果负责的人。</p>
+<h2 id="05-能力地图：我已有的、我缺的、我暂时不追的"><a href="#05-能力地图：我已有的、我缺的、我暂时不追的" class="headerlink" title="05. 能力地图：我已有的、我缺的、我暂时不追的"></a>05. 能力地图：我已有的、我缺的、我暂时不追的</h2><h3 id="已有优势：要保温，而不是躺在简历里"><a href="#已有优势：要保温，而不是躺在简历里" class="headerlink" title="已有优势：要保温，而不是躺在简历里"></a>已有优势：要保温，而不是躺在简历里</h3><p>我的优势不应只写成“熟悉 Spring Boot”。我需要持续把它们转成能够解释的问题、方案和结果：</p>
+<ul>
+<li>Java 后端：接口设计、数据库与缓存、策略&#x2F;工厂&#x2F;模板等可维护性设计、日志治理。</li>
+<li>AI 应用：向量检索、Milvus、召回与重排、意图识别、多轮问答、知识库构建和效果评估。</li>
+<li>运维现场：网络、虚拟化、监控、日常变更和故障处置的真实语境。</li>
+<li>自动化基础：Python 脚本能力，能够作为运维自动化、质量评估和数据处理的抓手。</li>
+</ul>
+<h3 id="关键缺口：按市场价值排序补齐"><a href="#关键缺口：按市场价值排序补齐" class="headerlink" title="关键缺口：按市场价值排序补齐"></a>关键缺口：按市场价值排序补齐</h3><ol>
+<li><strong>Linux 与网络排障</strong>：进程、文件系统、权限、systemd、TCP、DNS、HTTP&#x2F;TLS、NAT、负载均衡，能用证据定位问题。</li>
+<li><strong>容器与 Kubernetes</strong>：Docker 镜像、Compose、Deployment&#x2F;Service&#x2F;Ingress、ConfigMap&#x2F;Secret、资源限制、滚动发布、回滚、HPA。</li>
+<li><strong>交付与基础设施即代码</strong>：Git 工作流、CI&#x2F;CD、制品管理、镜像扫描、Terraform 或 Ansible，理解审批、幂等和回滚。</li>
+<li><strong>可观测性与可靠性</strong>：指标、日志、链路、告警、SLO、容量、故障复盘；会用 Prometheus、Grafana、Loki&#x2F;ELK 只是起点。</li>
+<li><strong>Java 工程深度</strong>：JVM、并发、MySQL 索引与事务、Redis 一致性、MQ 可靠性、测试和性能分析。</li>
+<li><strong>AI 应用工程深度</strong>：RAG 评测集、召回&#x2F;重排指标、提示词与上下文治理、权限隔离、失败降级、成本与延迟。</li>
+<li><strong>表达与英语</strong>：读英文文档、写清楚变更说明和复盘、在面试中用 STAR 结构讲清成果。</li>
+</ol>
+<h3 id="暂时不追的东西"><a href="#暂时不追的东西" class="headerlink" title="暂时不追的东西"></a>暂时不追的东西</h3><p>我不需要在一年内把所有热门名词装进简历：大模型训练、所有公有云认证、Service Mesh、复杂的多集群平台、所有算法题、所有中间件都不是当前必需品。学习的判断标准只有一个：它能否让我的项目或工作成果更接近目标岗位的 JD。</p>
+<h2 id="06-五年路线图：每一步都要留下证据"><a href="#06-五年路线图：每一步都要留下证据" class="headerlink" title="06. 五年路线图：每一步都要留下证据"></a>06. 五年路线图：每一步都要留下证据</h2><h3 id="阶段一：0–6-个月——先让当前岗位产生“工程信号”"><a href="#阶段一：0–6-个月——先让当前岗位产生“工程信号”" class="headerlink" title="阶段一：0–6 个月——先让当前岗位产生“工程信号”"></a>阶段一：0–6 个月——先让当前岗位产生“工程信号”</h3><p><strong>目标</strong>：不急着跳槽，完成新人训练的同时，留下可写进简历的自动化、监控或变更成果。</p>
+<p>我会完成以下最小成果：</p>
+<ul>
+<li>建立至少 10 条脱敏的故障&#x2F;问题记录，固定使用“现象—影响—假设—证据—根因—处理—预防”模板。</li>
+<li>用 Python 或 Shell 完成至少一个重复任务自动化，例如巡检汇总、配置核查、告警降噪、报表生成或资产数据校验。</li>
+<li>独立写清一次标准变更：前置检查、执行步骤、验证项、回滚条件、回滚步骤和复盘。</li>
+<li>在本地完成 Docker、Git、Linux 基础、Prometheus&#x2F;Grafana 入门；每周保持至少一次 Java 或 Python 提交。</li>
+<li>不把公司日志、拓扑、IP、配置、凭据、客户数据或内部代码输入未获批准的外部 AI 工具。</li>
+</ul>
+<p><strong>阶段验收</strong>：到第 6 个月，我应该能够面试式地讲清楚一个真实问题：为什么发现、如何定位、改了什么、如何验证、怎样避免再发生。没有结果数字时也不能编造；可以写“处理时长缩短”“人工步骤减少”，但必须能说明计算口径。</p>
+<h3 id="阶段二：6–12-个月——做出一件可展示的生产级作品"><a href="#阶段二：6–12-个月——做出一件可展示的生产级作品" class="headerlink" title="阶段二：6–12 个月——做出一件可展示的生产级作品"></a>阶段二：6–12 个月——做出一件可展示的生产级作品</h3><p><strong>目标</strong>：用一个完整作品连接 Java、AI 应用和平台能力，而不是堆砌十个教程项目。</p>
+<p>项目建议：<strong>可评测、可观测、可部署的企业知识助手服务</strong>。</p>
+<p>它应包含这条完整链路：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs text">Spring Boot API<br>  → 知识导入与检索模块（公开/自建样例数据）<br>  → MySQL / Redis / 向量库<br>  → Docker Compose 本地环境<br>  → CI：测试、构建、镜像扫描<br>  → Kubernetes + Helm 部署、升级与回滚<br>  → Prometheus / Grafana / 日志平台<br>  → Python 评测脚本与健康检查<br></code></pre></td></tr></table></figure>
+
+<p>我会为项目补齐四类“工程证据”：</p>
+<ul>
+<li><strong>质量</strong>：一组固定问答评测集，记录检索命中、答案可用性、失败样本与改进前后对比。</li>
+<li><strong>性能</strong>：记录 P95 延迟、错误率、缓存命中或并发压测结果，并说明测试环境与方法。</li>
+<li><strong>可靠性</strong>：至少演练一次错误配置、依赖不可用或版本回滚，并写复盘。</li>
+<li><strong>交付</strong>：提供 README、架构图、启动脚本、部署说明、监控截图和短演示视频。</li>
+</ul>
+<p>项目中只能使用公开数据或我自己编造的样例数据。它不能假装是公司项目，也不能用不可复现的“效果提升 90%”作为宣传。</p>
+<p><strong>阶段验收</strong>：别人把仓库拉下来，能在 15 分钟内理解它解决什么问题、如何运行、怎样观察健康状态、失败后如何恢复。</p>
+<h3 id="阶段三：12–24-个月——准备一次有选择权的跳槽"><a href="#阶段三：12–24-个月——准备一次有选择权的跳槽" class="headerlink" title="阶段三：12–24 个月——准备一次有选择权的跳槽"></a>阶段三：12–24 个月——准备一次有选择权的跳槽</h3><p><strong>目标</strong>：把“我做过运维”重写为“我能开发、交付、观测和稳定运行服务”，争取进入直接雇佣或更核心的工程团队。</p>
+<p>我会准备两份简历，而不是一份简历投所有岗位：</p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>投递岗位</th>
+<th>重点顺序</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A：Java &#x2F; AI 应用平台版</td>
+<td>Java 后端、AI 应用工程、AI 平台</td>
+<td>AI Agent 与 Java 实习 → 项目中的服务化、评测、性能与云原生交付 → 当前工作中的自动化&#x2F;监控</td>
+</tr>
+<tr>
+<td>B：平台 &#x2F; SRE 版</td>
+<td>DevOps、平台工程、SRE、中间件&#x2F;可观测性</td>
+<td>当前工作中的变更、监控、自动化 → 容器、CI&#x2F;CD、IaC、可观测性项目 → Java&#x2F;Python 编码能力</td>
+</tr>
+</tbody></table>
+<p>两份简历都遵守三个原则：</p>
+<ol>
+<li>每个 bullet 都尽量采用“动作 + 技术&#x2F;约束 + 可验证结果”的写法。</li>
+<li>只写我真正做过、能追问到底的内容；外包项目要如实写雇佣关系，不把客户伪装成雇主。</li>
+<li>不把“使用 Cursor&#x2F;Copilot”当作核心技术亮点；真正有价值的是我如何做检索评测、服务设计、自动化、故障定位和结果验证。</li>
+</ol>
+<p>同时，我会准备三段 STAR 故事：一次自动化改造、一次故障或告警治理、一次部署&#x2F;回滚或性能优化。每段控制在 2 分钟讲清背景、限制、行动和结果。</p>
+<h3 id="阶段四：3–5-年——从“会工具”到“对系统结果负责”"><a href="#阶段四：3–5-年——从“会工具”到“对系统结果负责”" class="headerlink" title="阶段四：3–5 年——从“会工具”到“对系统结果负责”"></a>阶段四：3–5 年——从“会工具”到“对系统结果负责”</h3><p><strong>目标</strong>：能独立负责一项服务或平台能力的稳定性、效率或成本，而不是只执行别人设计好的流程。</p>
+<p>我会有选择地深入一条支线：</p>
+<ul>
+<li>AI 应用平台：RAG 质量、权限与数据治理、模型路由、成本与延迟、服务可靠性。</li>
+<li>平台 &#x2F; SRE：多环境交付、容量与 SLO、故障演练、可观测性平台、内部开发者平台。</li>
+<li>AI 基础设施 &#x2F; MLOps：训练&#x2F;推理资源、模型发布、数据与特征治理、GPU 或异构资源调度。</li>
+<li>高性能 Java &#x2F; 中间件：JVM、分布式一致性、消息队列、缓存与数据库性能、高可用设计。</li>
+</ul>
+<p>我不必过早给自己锁死一个分支。前两年先建立“开发 + 生产”的共同底座，第三年以后根据所在团队的系统规模、擅长项和岗位机会再聚焦，成功率更高。</p>
+<h2 id="07-每周怎么做：把目标切成不靠意志力的流程"><a href="#07-每周怎么做：把目标切成不靠意志力的流程" class="headerlink" title="07. 每周怎么做：把目标切成不靠意志力的流程"></a>07. 每周怎么做：把目标切成不靠意志力的流程</h2><p>我的学习时间不追求每天三小时，而是追求每周稳定产出。正常工作周的基础节奏如下：</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>固定动作</th>
+<th>当天的可见产出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>每个工作日 10 分钟</td>
+<td>记录一个问题、变更或观察</td>
+<td>一条脱敏的工程笔记</td>
+</tr>
+<tr>
+<td>周一 75–90 分钟</td>
+<td>Linux &#x2F; 网络</td>
+<td>一份排障命令卡或小实验</td>
+</tr>
+<tr>
+<td>周二 75–90 分钟</td>
+<td>Java &#x2F; Python 自动化</td>
+<td>一个脚本、单测或代码提交</td>
+</tr>
+<tr>
+<td>周三 75–90 分钟</td>
+<td>Docker &#x2F; Kubernetes</td>
+<td>一个可运行 manifest 或实验记录</td>
+</tr>
+<tr>
+<td>周四 75–90 分钟</td>
+<td>CI&#x2F;CD、监控、IaC</td>
+<td>一条流水线或一个 Dashboard&#x2F;告警实验</td>
+</tr>
+<tr>
+<td>周五 75–90 分钟</td>
+<td>算法 + 英文文档</td>
+<td>2 道高频题 + 5 句英文摘要</td>
+</tr>
+<tr>
+<td>周六 3 小时</td>
+<td>作品集深度工作</td>
+<td>项目一个可演示的完整功能</td>
+</tr>
+<tr>
+<td>周日 45 分钟</td>
+<td>复盘、投递跟踪、下周计划</td>
+<td>周报、岗位 JD 对照表</td>
+</tr>
+</tbody></table>
+<p>加班周的保底版本是：工作日每天 20 分钟做一条笔记或一道题，周末保留 90 分钟给项目。宁可缩短，也不要完全中断。职业竞争力靠的是 18 个月的复利，不是连续两周的冲刺。</p>
+<h2 id="08-LeetCode-要不要刷？要，但不能吞掉主线"><a href="#08-LeetCode-要不要刷？要，但不能吞掉主线" class="headerlink" title="08. LeetCode 要不要刷？要，但不能吞掉主线"></a>08. LeetCode 要不要刷？要，但不能吞掉主线</h2><p>如果我想进入大厂、金融科技或重视基础能力的团队，算法面试是门槛，不能回避。但它不是我当前职业规划的主体。</p>
+<p>我会把约 15%–20% 的学习时间投入算法，目标是 75–100 道 Java 高频题，优先掌握：数组&#x2F;哈希、双指针、二分、链表、栈队列、树的 DFS&#x2F;BFS、堆、回溯和基础动态规划。重点不是背答案，而是能在 30 分钟内说清复杂度、边界条件和替代方案。</p>
+<p>剩余的主要时间仍然投给 Linux、网络、Kubernetes、CI&#x2F;CD、监控、Java 工程深度和作品集。对平台&#x2F;SRE&#x2F;AI 应用岗位而言，项目和系统设计题通常比把算法题刷到 300 道更能决定面试质量。</p>
+<h2 id="09-面对-AI：把它变成杠杆，而不是自己的替代者"><a href="#09-面对-AI：把它变成杠杆，而不是自己的替代者" class="headerlink" title="09. 面对 AI：把它变成杠杆，而不是自己的替代者"></a>09. 面对 AI：把它变成杠杆，而不是自己的替代者</h2><p>AI 已经能生成脚本、配置模板、测试用例、初步排障思路和文档摘要。这意味着“会复制命令”和“会拼 YAML”的价值会继续下降。</p>
+<p>我希望自己保有的不可替代部分是：</p>
+<ul>
+<li>在信息不完整时判断故障影响、止损优先级和排查路径。</li>
+<li>在安全、成本、性能、可维护性和交付速度之间做取舍。</li>
+<li>为变更设计验证、灰度、回滚、审计与责任边界。</li>
+<li>把 AI 应用质量从“感觉能用”变成可评测、可观察、可迭代的工程系统。</li>
+<li>与开发、业务、安全、运维和管理者对齐风险与预期。</li>
+</ul>
+<p>我会在低风险、获授权的场景中使用 AI：生成草稿、解释报错、补测试、整理非敏感知识、辅助阅读文档和编写个人项目。任何生产操作都必须由人审批并保留审计；AI 的输出要经过验证，不能直接作为生产变更依据。</p>
+<h2 id="10-求职时，我如何判断一份工作是否值得跳"><a href="#10-求职时，我如何判断一份工作是否值得跳" class="headerlink" title="10. 求职时，我如何判断一份工作是否值得跳"></a>10. 求职时，我如何判断一份工作是否值得跳</h2><p>我会在面试中主动问这些问题，而不是只问薪资：</p>
+<ol>
+<li>这个岗位是直接雇佣、项目制还是外包驻场？劳动关系和团队归属是什么？</li>
+<li>日常工作中，编码&#x2F;自动化、平台建设、工单支持各占多少比例？</li>
+<li>团队是否真的使用 Kubernetes、CI&#x2F;CD、IaC 和可观测性系统？我是使用者还是建设者？</li>
+<li>这个岗位是否拥有发布、监控、故障复盘、容量或成本中的至少一项结果责任？</li>
+<li>是否有生产环境权限、值班制度和明确的升级机制？故障如何复盘？</li>
+<li>直属负责人是否能给出我前 6–12 个月可以承担的项目？</li>
+<li>技术栈和协作语言是否能帮助我获得下一跳的能力，而不只是完成当前客户任务？</li>
+</ol>
+<p>例如，<a target="_blank" rel="noopener" href="https://cn.linkedin.com/jobs/view/devops-engineer-remote-at-it-consultis-4361484389">IT Consultis 的 DevOps 职位</a> 对多云、Terraform&#x2F;Ansible、Jenkins&#x2F;GitLab&#x2F;GitHub Actions、Prometheus&#x2F;Grafana&#x2F;ELK 和英文文档都有要求；<a target="_blank" rel="noopener" href="https://cn.linkedin.com/jobs/view/devops-engineer-data-ai-infra-at-airwallex-4288893338">Airwallex 的 Data &amp; AI Infra DevOps 职位</a> 则把云、Kubernetes、Terraform、CI&#x2F;CD、分布式系统与 AI 数据基础设施放在一起。这些都更接近我中长期想获得的职责范围。岗位链接只作为能力画像参考，实际开放状态需要在投递当天重新确认。</p>
+<h2 id="11-每月复盘：常见问题-Q-A"><a href="#11-每月复盘：常见问题-Q-A" class="headerlink" title="11. 每月复盘：常见问题 Q&amp;A"></a>11. 每月复盘：常见问题 Q&amp;A</h2><h3 id="Q1：我是不是应该立刻从运维跳到开发？"><a href="#Q1：我是不是应该立刻从运维跳到开发？" class="headerlink" title="Q1：我是不是应该立刻从运维跳到开发？"></a>Q1：我是不是应该立刻从运维跳到开发？</h3><p>不一定。当前最优动作通常是先用 6–12 个月把运维岗位中的自动化、监控、变更和故障经验工程化，同时不让 Java 主线断掉。只有当岗位长期不给接触技术升级、也无法形成成果，并且我已经具备可投递的项目与面试准备时，跳槽才是主动选择，而不是逃离。</p>
+<p><strong>自省</strong>：我想跳，是因为岗位真的没有成长空间，还是因为我还没有把眼前任务做成成果？</p>
+<h3 id="Q2：AI-Agent-经历会不会因为我做运维而失效？"><a href="#Q2：AI-Agent-经历会不会因为我做运维而失效？" class="headerlink" title="Q2：AI Agent 经历会不会因为我做运维而失效？"></a>Q2：AI Agent 经历会不会因为我做运维而失效？</h3><p>会失效，前提是我停止写代码、停止做评测、停止理解模型与检索链路。它不会失效，前提是我把它和部署、监控、权限、成本、稳定性结合起来。市场不缺一个会调用模型 API 的人，缺的是能把 AI 服务长期跑稳的人。</p>
+<p><strong>自省</strong>：过去四周，我是否还有可展示的 Java、Python 或 AI 应用提交？</p>
+<h3 id="Q3：我是否必须刷很多-LeetCode？"><a href="#Q3：我是否必须刷很多-LeetCode？" class="headerlink" title="Q3：我是否必须刷很多 LeetCode？"></a>Q3：我是否必须刷很多 LeetCode？</h3><p>不必把刷题数量当成自我价值，但要通过大厂或金融科技面试，必须具备稳定的高频题基础。先完成 75–100 道高频题并二刷，再根据目标公司的面试反馈追加，而不是盲目追求题库数量。</p>
+<p><strong>自省</strong>：我刷题是在逃避做项目，还是在为具体面试门槛做准备？</p>
+<h3 id="Q4：要不要考证？"><a href="#Q4：要不要考证？" class="headerlink" title="Q4：要不要考证？"></a>Q4：要不要考证？</h3><p>证书可以补充信号，不能替代项目和结果。若公司技术栈已明确，可选择一张与实际工作相关的云或 Kubernetes 认证；如果时间有限，优先完成项目、自动化和英文文档阅读。不要为了“简历好看”同时报多张证。</p>
+<p><strong>自省</strong>：这张证书能否在三个月内转化为我项目或工作中的一个实际能力？</p>
+<h3 id="Q5：个人项目会不会被面试官认为是假项目？"><a href="#Q5：个人项目会不会被面试官认为是假项目？" class="headerlink" title="Q5：个人项目会不会被面试官认为是假项目？"></a>Q5：个人项目会不会被面试官认为是假项目？</h3><p>个人项目不是问题，无法解释的项目才是问题。只要我明确标注“个人项目”，能现场演示架构、测试、指标、故障演练和取舍，并且不用虚构的公司业务数据，它会比常见的模板项目有说服力。</p>
+<p><strong>自省</strong>：如果面试官追问“为什么这样设计、失败时怎么办、指标怎么来的”，我能回答吗？</p>
+<h3 id="Q6：大厂、外企、金融科技的标签值不值得为此降一点薪？"><a href="#Q6：大厂、外企、金融科技的标签值不值得为此降一点薪？" class="headerlink" title="Q6：大厂、外企、金融科技的标签值不值得为此降一点薪？"></a>Q6：大厂、外企、金融科技的标签值不值得为此降一点薪？</h3><p>有时值得，但要计算总收益。早期进入品牌更强、工程方法更成熟、系统规模更大且直接雇佣的团队，可能带来更高的下一跳上限；但如果它只是低价值驻场或纯工单岗位，标签不足以弥补能力停滞。看“团队、职责和成果”，不要只看 Logo。</p>
+<p><strong>自省</strong>：这份工作两年后能让我简历上新增哪三条别人难以复制的成果？</p>
+<h3 id="Q7：现在-14K-是不是太低，必须尽快涨薪？"><a href="#Q7：现在-14K-是不是太低，必须尽快涨薪？" class="headerlink" title="Q7：现在 14K 是不是太低，必须尽快涨薪？"></a>Q7：现在 14K 是不是太低，必须尽快涨薪？</h3><p>薪资需要被认真对待，但过早跳到职责范围相近的岗位，往往只是更换环境，没有提高职业资本。我的目标是让下一次跳槽同时升级岗位内容、雇佣质量、技术密度和总包，而不是只增加 2K 后继续做同样的事。</p>
+<p><strong>自省</strong>：我下一跳的目标是“更高月薪”，还是“更高的职责密度和可迁移成果”？</p>
+<h3 id="Q8：我能不能同时学-Java、Kubernetes、AI、英语和算法？"><a href="#Q8：我能不能同时学-Java、Kubernetes、AI、英语和算法？" class="headerlink" title="Q8：我能不能同时学 Java、Kubernetes、AI、英语和算法？"></a>Q8：我能不能同时学 Java、Kubernetes、AI、英语和算法？</h3><p>可以，但不能并列冲刺。我的时间分配是：45% 给 Java&#x2F;AI 应用，35% 给云原生与平台能力，20% 给算法、英语和职业表达。每个季度只设一个主项目和一个主能力主题。</p>
+<p><strong>自省</strong>：我本周是否有一个明确的主线，还是打开了五门课程却没有任何可展示产出？</p>
+<h3 id="Q9：如何把日常运维工作写进简历？"><a href="#Q9：如何把日常运维工作写进简历？" class="headerlink" title="Q9：如何把日常运维工作写进简历？"></a>Q9：如何把日常运维工作写进简历？</h3><p>不要写“负责服务器巡检、处理用户问题”。要写清职责、约束、行动和结果，例如“使用 Python 将某类重复核查流程自动化，覆盖 X 类检查项，减少人工步骤；加入失败重试、日志和人工兜底”。其中 X 和结果必须真实、可追问、可脱敏。</p>
+<p><strong>自省</strong>：我能否拿出工单、变更记录、脚本提交或复盘记录来支撑这条简历？</p>
+<h3 id="Q10：AI-会不会替代我？"><a href="#Q10：AI-会不会替代我？" class="headerlink" title="Q10：AI 会不会替代我？"></a>Q10：AI 会不会替代我？</h3><p>AI 会替代一部分重复操作，也会提升会用它的工程师的产出。我不能把价值建立在重复执行上，而要建立在需求澄清、系统判断、质量验证、风险控制和跨团队交付上。它更像一个会犯错但速度很快的初级助手，而不是可以不经验证地上生产的负责人。</p>
+<p><strong>自省</strong>：我最近一次使用 AI 后，有没有验证它的输出并留下可复用的规范？</p>
+<h3 id="Q11：什么时候说明当前方向应该调整？"><a href="#Q11：什么时候说明当前方向应该调整？" class="headerlink" title="Q11：什么时候说明当前方向应该调整？"></a>Q11：什么时候说明当前方向应该调整？</h3><p>如果连续两个季度都无法获得自动化、编码、监控、变更或项目成果，同时个人项目也无法推进，就要重新评估所在岗位和时间安排。如果我发现自己更享受高并发业务、产品交付，就偏向 Java&#x2F;AI 应用；如果更享受故障定位、平台抽象和系统稳定性，就偏向平台&#x2F;SRE。调整是基于证据，不是追随情绪。</p>
+<p><strong>自省</strong>：我是在被市场的短期热点牵着走，还是基于过去一个季度的真实投入和反馈做选择？</p>
+<h3 id="Q12：我的简历最重要的改动是什么？"><a href="#Q12：我的简历最重要的改动是什么？" class="headerlink" title="Q12：我的简历最重要的改动是什么？"></a>Q12：我的简历最重要的改动是什么？</h3><p>不是加更多技术名词，而是建立两个清晰版本，并把顶部定位改成“Java &#x2F; AI 应用工程 + 云原生交付与可靠性”。AI Agent 和 Java 实习应保持强曝光；当前运维经历要写出自动化、监控、变更和问题闭环；“随时到岗”等与在职状态冲突的信息必须移除。</p>
+<p><strong>自省</strong>：我的简历读完 15 秒后，招聘方是否能说出我想投什么岗位、凭什么匹配？</p>
+<h2 id="12-Grill-Me：每月一次，不给自己留模糊答案"><a href="#12-Grill-Me：每月一次，不给自己留模糊答案" class="headerlink" title="12. Grill Me：每月一次，不给自己留模糊答案"></a>12. Grill Me：每月一次，不给自己留模糊答案</h2><p>这一部分不是为了自责，而是为了排除“看起来很努力”的错觉。每次只选一个问题，写下答案和下一步行动。</p>
+<h3 id="1-我是在主动选择“平台-AI-应用工程”，还是在用它逃避对某一项基本功的投入？"><a href="#1-我是在主动选择“平台-AI-应用工程”，还是在用它逃避对某一项基本功的投入？" class="headerlink" title="1. 我是在主动选择“平台&#x2F;AI 应用工程”，还是在用它逃避对某一项基本功的投入？"></a>1. 我是在主动选择“平台&#x2F;AI 应用工程”，还是在用它逃避对某一项基本功的投入？</h3><p><strong>推荐答案</strong>：我能说出本季度最重要的一个能力缺口，并有可检查的周计划，例如完成 Kubernetes 部署与回滚演练。</p>
+<p><strong>为什么重要</strong>：方向不是身份标签。没有基本功的跨界，只会变成简历上的关键词堆砌。</p>
+<h3 id="2-如果明天面试官要求我现场讲一个真实问题，我能否拿出完整证据链？"><a href="#2-如果明天面试官要求我现场讲一个真实问题，我能否拿出完整证据链？" class="headerlink" title="2. 如果明天面试官要求我现场讲一个真实问题，我能否拿出完整证据链？"></a>2. 如果明天面试官要求我现场讲一个真实问题，我能否拿出完整证据链？</h3><p><strong>推荐答案</strong>：我有脱敏的现象、日志或指标、排查路径、根因、修复、验证和预防措施；不知道的地方也能坦诚说明。</p>
+<p><strong>为什么重要</strong>：可靠性岗位看的是判断过程，不是结论背诵。</p>
+<h3 id="3-我是否连续四周保持了每周至少四小时的编码或项目时间？"><a href="#3-我是否连续四周保持了每周至少四小时的编码或项目时间？" class="headerlink" title="3. 我是否连续四周保持了每周至少四小时的编码或项目时间？"></a>3. 我是否连续四周保持了每周至少四小时的编码或项目时间？</h3><p><strong>推荐答案</strong>：有 Git 提交、评测结果、脚本或实验记录，而不是只收藏了课程。</p>
+<p><strong>为什么重要</strong>：没有持续编码，Java 和 AI 应用能力会在一年内明显缩水。</p>
+<h3 id="4-我的个人项目是否真的具备“失败时怎样恢复”的答案？"><a href="#4-我的个人项目是否真的具备“失败时怎样恢复”的答案？" class="headerlink" title="4. 我的个人项目是否真的具备“失败时怎样恢复”的答案？"></a>4. 我的个人项目是否真的具备“失败时怎样恢复”的答案？</h3><p><strong>推荐答案</strong>：我至少演练过一次版本回滚、依赖不可用或错误配置，并把检查项写进 README。</p>
+<p><strong>为什么重要</strong>：这是“能跑”与“可运营”的分界线。</p>
+<h3 id="5-我在用-AI-提效时，是否保持了数据边界和验证责任？"><a href="#5-我在用-AI-提效时，是否保持了数据边界和验证责任？" class="headerlink" title="5. 我在用 AI 提效时，是否保持了数据边界和验证责任？"></a>5. 我在用 AI 提效时，是否保持了数据边界和验证责任？</h3><p><strong>推荐答案</strong>：我只输入获授权的非敏感信息；生产建议有人审、有记录、有回滚；我会验证输出。</p>
+<p><strong>为什么重要</strong>：安全与可靠性不是 AI 时代的负担，恰恰是工程师价值的一部分。</p>
+<h3 id="6-我是否为了一个知名公司-Logo，接受了一份两年后无法解释的工作？"><a href="#6-我是否为了一个知名公司-Logo，接受了一份两年后无法解释的工作？" class="headerlink" title="6. 我是否为了一个知名公司 Logo，接受了一份两年后无法解释的工作？"></a>6. 我是否为了一个知名公司 Logo，接受了一份两年后无法解释的工作？</h3><p><strong>推荐答案</strong>：即使公司很有名，我也能明确说出岗位的技术栈、权限、产出、导师和下一跳价值；否则继续找。</p>
+<p><strong>为什么重要</strong>：品牌是放大器，不是职业资本的替代品。</p>
+<h3 id="7-我本月新增的简历-bullet，能经得起三层追问吗？"><a href="#7-我本月新增的简历-bullet，能经得起三层追问吗？" class="headerlink" title="7. 我本月新增的简历 bullet，能经得起三层追问吗？"></a>7. 我本月新增的简历 bullet，能经得起三层追问吗？</h3><p><strong>推荐答案</strong>：能解释业务背景、技术方案、指标口径、我的个人贡献和失败方案；不能的就不写。</p>
+<p><strong>为什么重要</strong>：诚实且可深挖的三条成果，比十条空泛的“熟悉”更有价值。</p>
+<h3 id="8-如果未来九个月当前工作没有给我技术升级机会，我的-Plan-B-是什么？"><a href="#8-如果未来九个月当前工作没有给我技术升级机会，我的-Plan-B-是什么？" class="headerlink" title="8. 如果未来九个月当前工作没有给我技术升级机会，我的 Plan B 是什么？"></a>8. 如果未来九个月当前工作没有给我技术升级机会，我的 Plan B 是什么？</h3><p><strong>推荐答案</strong>：我会完成个人项目、积累公开技术输出、准备两版简历和面试题库，在第 9–12 个月开始有节奏地投递，而不是等到受不了才裸辞。</p>
+<p><strong>为什么重要</strong>：职业选择权来自可迁移能力和现金流，而不是情绪化的离开。</p>
+<h2 id="13-接下来-72-小时：只做三件事"><a href="#13-接下来-72-小时：只做三件事" class="headerlink" title="13. 接下来 72 小时：只做三件事"></a>13. 接下来 72 小时：只做三件事</h2><ol>
+<li>建一个私人的 <code>career-evidence</code> 文档，写下第一条脱敏问题记录，并建立“成果—证据—可写简历”的表格。</li>
+<li>为“可评测、可观测的知识助手”创建代码仓库，先提交 README、架构草图和本周第一个可运行接口。</li>
+<li>从目标岗位中各找 10 条 Java&#x2F;AI 应用、平台&#x2F;SRE JD，做一张技能差距表；只标记重复出现三次以上的能力，不被单个 JD 带偏。</li>
+</ol>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>我不需要在毕业后的第一份工作里就确定终身职业，也不需要否认自己正在做的运维工作。真正值得做的是：保住 Java 和 AI 应用的编码能力，把生产现场经验提炼为自动化、可观测性和可靠性交付能力，并用项目、复盘、代码和真实成果留下证据。</p>
+<p>当我能把一个服务从需求理解、开发、部署、监控到故障恢复完整讲清楚时，我就不再只是“做过 IT 运维的应届生”，而是在成长为一个能交付生产级系统的工程师。这才是薪资、品牌和长期竞争力共同的基础。</p>
+<h2 id="参考岗位与说明"><a href="#参考岗位与说明" class="headerlink" title="参考岗位与说明"></a>参考岗位与说明</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://cn.linkedin.com/jobs/view/devops-engineer-analyst-risk-quant-analytics-at-polymer-capital-4436317317">Polymer Capital：DevOps Engineer – Analyst</a></li>
+<li><a target="_blank" rel="noopener" href="https://cn.linkedin.com/jobs/view/electronic-trading-devops-engineer-global-banking-markets-engineering-analyst-associate-shanghai-at-%E9%AB%98%E7%9B%9B-4377786019">Goldman Sachs：Electronic Trading DevOps Engineer</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.sse.com.cn/aboutus/recruitment/sseinfo/c/c_20260409_10814681.shtml">上海证券交易所：上海证券交易所信息网络有限公司招聘</a></li>
+<li><a target="_blank" rel="noopener" href="https://cn.linkedin.com/jobs/view/devops-engineer-remote-at-it-consultis-4361484389">IT Consultis：DevOps Engineer</a></li>
+<li><a target="_blank" rel="noopener" href="https://cn.linkedin.com/jobs/view/devops-engineer-data-ai-infra-at-airwallex-4288893338">Airwallex：DevOps Engineer, Data &amp; AI Infra</a></li>
+</ul>
+<blockquote>
+<p>岗位链接用于观察能力要求，不代表职位仍在开放，也不构成薪酬承诺。投递前应以公司官网、招聘平台和面试沟通中的最新信息为准。</p>
+</blockquote>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/" class="print-no-link">#Java</a>
+      
+        <a href="/tags/%E8%81%8C%E4%B8%9A%E8%A7%84%E5%88%92/" class="print-no-link">#职业规划</a>
+      
+        <a href="/tags/AI%E5%BA%94%E7%94%A8/" class="print-no-link">#AI应用</a>
+      
+        <a href="/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/" class="print-no-link">#云原生</a>
+      
+        <a href="/tags/SRE/" class="print-no-link">#SRE</a>
+      
+        <a href="/tags/%E4%B8%8A%E6%B5%B7/" class="print-no-link">#上海</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>从 IT 运维到 AI 应用平台工程师：一份给自己的五年职业规划</div>
+      <div>https://maplelea1f.github.io/2026/08/02/从IT运维到AI应用平台工程师：一份给自己的五年职业规划/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Maple</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年8月3日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/08/03/%E7%AE%80%E6%98%93RPC%E6%A1%86%E6%9E%B6/" title="RPC框架总结笔记">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">RPC框架总结笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/07/29/vlan-business-and-management-vlan-troubleshooting/" title="VLAN 业务隔离与独立管理 VLAN：一次交换机管理地址不通的排障记录">
+                        <span class="hidden-mobile">VLAN 业务隔离与独立管理 VLAN：一次交换机管理地址不通的排障记录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
